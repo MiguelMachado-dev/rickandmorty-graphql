@@ -23,7 +23,7 @@ A Rick and Morty project created to improve GraphQL and react-query skills. Crea
   <img width="64" height="64" src="/assets/icons/graphql.png" alt="GraphQL logo"/>
 </a>
 <a href="https://tanstack.com/query/v4">
-  <img width="64" height="64" src="/assets/icons/react-query.svg" alt="React-query Logo"/>
+  <img width="64" height="64" src="/assets/icons/react-query.png" alt="React-query Logo"/>
 </a>
 <a href="https://vitejs.dev/">
   <img width="64" height="64" src="/assets/icons/vite.png" alt="Vite logo"/>

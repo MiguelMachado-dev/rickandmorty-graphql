@@ -1,32 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useCharactersData } from 'helpers/useCharactersData'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const charactersQuery = useCharactersData()
+
+  if (charactersQuery.isLoading) return <p>Loading...</p>
+
+  if (charactersQuery.isError)
+    return <p>Error: {charactersQuery.error.message}</p>
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h2>Hello, World</h2>
+
+      {charactersQuery.data ? (
+        <div>
+          {charactersQuery.data?.characters.results.map((character) => (
+            <div key={character.id}>
+              <h3>{character.name}</h3>
+              <img src={character.image} alt={character.name} />
+            </div>
+          ))}
+        </div>
+      ) : null}
     </div>
   )
 }

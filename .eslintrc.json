@@ -46,6 +46,11 @@
             "position": "after"
           },
           {
+            "pattern": "graphql/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
             "pattern": "templates/**",
             "group": "external",
             "position": "after"

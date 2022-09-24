@@ -1,4 +1,5 @@
 <div align="center">
+
 # Rick and Morty
 
 <img width="820" height="462" src="/assets/cover.png" alt="Project Logo" />

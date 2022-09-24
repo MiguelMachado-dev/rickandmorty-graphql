@@ -1,3 +1,4 @@
+<div align="center">
 # Rick and Morty
 
 <img width="820" height="462" src="/assets/cover.png" alt="Project Logo" />
@@ -47,3 +48,4 @@ A Rick and Morty project created to improve GraphQL and react-query skills. Crea
 - Create a branch to work on your fix/feature: `git checkout -b feat/my-feature`
 - Commit your changes: `$ yarn commit`
 - Upload your changes and make a pull request! `git push origin feat/my-feature`
+</div>

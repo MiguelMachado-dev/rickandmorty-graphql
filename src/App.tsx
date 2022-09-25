@@ -2,26 +2,27 @@ import { useCharactersData } from 'helpers/useCharactersData'
 
 function App() {
   const charactersQuery = useCharactersData()
-
-  if (charactersQuery.isLoading) return <p>Loading...</p>
+  const charactersData = charactersQuery.data?.characters?.results ?? []
 
   if (charactersQuery.isError)
     return <p>Error: {charactersQuery.error.message}</p>
 
   return (
     <div className="App">
-      <h2>Hello, World</h2>
+      <h2>Rick and Morty - GraphQL, React Query and TypeScript project</h2>
 
-      {charactersQuery.data ? (
+      {charactersQuery.isLoading ? (
+        <p>Loading...</p>
+      ) : (
         <div>
-          {charactersQuery.data?.characters.results.map((character) => (
-            <div key={character.id}>
-              <h3>{character.name}</h3>
-              <img src={character.image} alt={character.name} />
+          {charactersData.map((character) => (
+            <div key={character?.id}>
+              <h3>{character?.name}</h3>
+              <img src={character?.image ?? ''} alt={character?.name ?? ''} />
             </div>
           ))}
         </div>
-      ) : null}
+      )}
     </div>
   )
 }

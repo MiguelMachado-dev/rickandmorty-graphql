@@ -1,12 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
 
 import { graphqlClient } from 'graphql/client'
+import { Characters } from 'graphql/generated/graphql'
 import { GET_CHARACTERS } from 'graphql/queries'
 
-import { GetCharactersType } from 'types'
-
 export function useCharactersData() {
-  const charactersQuery = useQuery<GetCharactersType, Error>(
+  const charactersQuery = useQuery<Characters, Error>(
     ['characters'],
     () => graphqlClient.request(GET_CHARACTERS),
     {
